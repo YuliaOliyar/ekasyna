@@ -1,0 +1,15 @@
+/* Style edytora blokowego — zbliżone do frontu. */
+body {
+	font-family: "Manrope", system-ui, sans-serif;
+	font-size: 18px;
+	line-height: 1.75;
+	color: #2B2E35;
+}
+h1, h2, h3, h4 {
+	font-family: "Bricolage Grotesque", "Manrope", sans-serif;
+	color: #15171C;
+	letter-spacing: -0.02em;
+}
+h2 { font-weight: 800; font-size: 34px; line-height: 1.12; }
+h3 { font-weight: 700; font-size: 26px; }
+a { color: #A30D25; }
