@@ -1,0 +1,19 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": { "php": "8.2", "wp": "latest" },
+  "features": { "networking": true },
+  "steps": [
+    { "step": "login", "username": "admin", "password": "password" },
+    { "step": "setSiteLanguage", "language": "pl_PL" },
+    {
+      "step": "installTheme",
+      "themeData": { "resource": "git:directory", "url": "https://github.com/YuliaOliyar/ekasyna", "ref": "main", "refType": "branch" },
+      "options": { "activate": true }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; update_option('blogname','e-kasyna.com'); wp_update_user(array('ID'=>1,'display_name'=>'Maks Dombrowski')); update_user_meta(1,'ekasyna_position','Redaktor naczelny'); wp_set_current_user(1); ekasyna_import_demo(); update_option('permalink_structure','/%postname%/'); flush_rewrite_rules();"
+    }
+  ]
+}

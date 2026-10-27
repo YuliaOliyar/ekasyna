@@ -31,6 +31,34 @@
 - **Мобильная версия:** закреплённая плашка бонуса «выбора редакции» и кнопка «наверх».
 - **Логотип:** знак-фишка с буквой «e» и вордмарк e◆kasyna.com, фавикон SVG.
 
+## Статический просмотр на GitHub Pages
+
+В папке `docs/` лежит готовый HTML-просмотр всех шаблонов темы. Его сгенерировали из WordPress на демо-данных. На главной `docs/index.html` — список шаблонов со ссылками, сами страницы лежат в `docs/demo/`.
+
+Как включить:
+1. **Settings → Pages**.
+2. **Source:** Deploy from a branch.
+3. **Branch:** `main`, папка **`/docs`** → **Save**.
+4. Через 1–2 минуты просмотр откроется по адресу **https://yuliaoliyar.github.io/ekasyna/**.
+
+В статическом просмотре не работают поиск по сайту и комментарии: это функции WordPress. Фильтры рейтинга ведут на страницы категорий.
+
+Как пересобрать после изменений: запустите WordPress с этой темой и выполните
+
+```bash
+python3 tools/build-preview.py --site http://localhost:8080 --wp /путь/к/wordpress --urls tools/urls.json
+```
+
+`tools/urls.json` — список страниц вида `["/recenzje/lemon-casino/", "Recenzja: Lemon Casino", "Recenzje"]`.
+
+## Онлайн-просмотр (без хостинга)
+
+Тема на PHP, поэтому GitHub Pages её не запустит. Посмотреть её можно в **WordPress Playground**: откройте ссылку, и WordPress в браузере сам установит тему из этого репозитория, импортирует демо-казино и включит красивые ссылки.
+
+**[▶ Открыть демо в WordPress Playground](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/YuliaOliyar/ekasyna/main/blueprint.json)**
+
+Сценарий загрузки лежит в `blueprint.json`. Данные в Playground не сохраняются: после перезагрузки страницы демо собирается заново. Вход в админку: `admin` / `password`.
+
 ## Установка
 
 1. Скопируйте папку в `wp-content/themes/ekasyna` (или загрузите zip через «Wygląd → Motywy → Dodaj nowy»).
