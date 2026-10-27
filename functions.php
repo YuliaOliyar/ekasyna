@@ -19,6 +19,8 @@ require_once EKASYNA_DIR . '/inc/toc.php';
 require_once EKASYNA_DIR . '/inc/customizer.php';
 require_once EKASYNA_DIR . '/inc/schema.php';
 require_once EKASYNA_DIR . '/inc/az.php';
+require_once EKASYNA_DIR . '/inc/newsletter.php';
+require_once EKASYNA_DIR . '/inc/demo-content.php';
 require_once EKASYNA_DIR . '/inc/demo.php';
 
 /**

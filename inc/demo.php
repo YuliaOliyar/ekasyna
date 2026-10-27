@@ -37,10 +37,9 @@ function ekasyna_demo_data() {
 				'currency'     => 'PLN',
 				'app'          => 'Tak',
 				'bonuses'      => "400% bonus: wpłać 50 zł, graj za 250 zł | Bonus powitalny | 50 zł | | |",
-				'website'      => '[adres strony]',
-				'support'      => '[kanały wsparcia]',
-				'payments'     => '[wpłaty — po przecinku]',
-				'providers'    => '[producenci — po przecinku]',
+				'support'      => 'Czat na żywo, e-mail',
+				'payments'     => 'Kryptowaluty',
+				'cons'         => "Brak polskiej licencji — kasyno działa na licencji Curaçao\nBonus wymaga minimalnej wpłaty 50 zł",
 				'pros'         => "Przejrzysty interfejs i kolorowy design\nPromocje i turnieje\nGry na żywo z krupierem\nPłatności kryptowalutami\nAplikacja mobilna",
 			),
 			'content' => '<!-- wp:paragraph --><p>Lemon Casino działa od 2021 roku, jego operatorem jest Orange Entertainment B.V. z licencją Curaçao. W lobby jest ponad 5 400 gier, w tym kasyno na żywo i Aviator.</p><!-- /wp:paragraph -->',
@@ -111,6 +110,8 @@ function ekasyna_import_demo() {
 		}
 	}
 
+	ekasyna_demo_apply_content();
+
 	return $created;
 }
 
@@ -139,7 +140,7 @@ function ekasyna_demo_page() {
 		<?php if ( null !== $done ) : ?>
 			<div class="notice notice-success"><p><?php printf( /* translators: %d liczba */ esc_html__( 'Utworzono kasyn: %d.', 'ekasyna' ), (int) $done ); ?></p></div>
 		<?php endif; ?>
-		<p><?php esc_html_e( 'Tworzy kategorie rankingu, 8 przykładowych kasyn z bonusami i ocenami oraz stronę „Wszystkie kasyna online” (katalog A–Z). Istniejące kasyna o tym samym tytule są pomijane.', 'ekasyna' ); ?></p>
+		<p><?php esc_html_e( 'Tworzy kategorie rankingu, 8 przykładowych kasyn z bonusami i ocenami stronę „Wszystkie kasyna online” (katalog A–Z), tekst pod rankingiem i w kategoriach, pełne recenzje oraz poradnik. Jeśli strona główna pokazuje wpisy, tworzy też stronę główną z artykułem. Istniejące kasyna o tym samym tytule są pomijane.', 'ekasyna' ); ?></p>
 		<form method="post">
 			<?php wp_nonce_field( 'ekasyna_demo' ); ?>
 			<?php submit_button( __( 'Importuj dane demo', 'ekasyna' ), 'primary', 'ekasyna_demo' ); ?>

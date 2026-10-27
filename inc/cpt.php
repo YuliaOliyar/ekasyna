@@ -94,6 +94,11 @@ function ekasyna_term_badge_field( $term ) {
 			<td><input name="ekasyna_badge" id="ekasyna_badge" type="text" value="<?php echo esc_attr( $value ); ?>" maxlength="5">
 			<p class="description"><?php esc_html_e( 'Do 5 znaków, pokazywana w kafelku „Czego szukasz?”.', 'ekasyna' ); ?></p></td>
 		</tr>
+		<tr class="form-field">
+			<th scope="row"><label for="ekasyna_content"><?php esc_html_e( 'Tekst pod listą kasyn', 'ekasyna' ); ?></label></th>
+			<td><textarea name="ekasyna_content" id="ekasyna_content" rows="14" class="large-text code"><?php echo esc_textarea( get_term_meta( $term->term_id, 'ekasyna_content', true ) ); ?></textarea>
+			<p class="description"><?php esc_html_e( 'HTML: nagłówki <h2>/<h3>, akapity, listy, tabele, <details> (FAQ). Z nagłówków H2 tworzy się spis treści.', 'ekasyna' ); ?></p></td>
+		</tr>
 		<?php
 	} else {
 		?>
@@ -115,6 +120,9 @@ add_action( 'kategoria-kasyna_edit_form_fields', 'ekasyna_term_badge_field' );
 function ekasyna_save_term_badge( $term_id ) {
 	if ( ! isset( $_POST['ekasyna_term_badge_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['ekasyna_term_badge_nonce'] ) ), 'ekasyna_term_badge' ) ) {
 		return;
+	}
+	if ( isset( $_POST['ekasyna_content'] ) ) {
+		update_term_meta( $term_id, 'ekasyna_content', wp_kses_post( wp_unslash( $_POST['ekasyna_content'] ) ) );
 	}
 	if ( isset( $_POST['ekasyna_badge'] ) ) {
 		update_term_meta( $term_id, 'ekasyna_badge', mb_substr( sanitize_text_field( wp_unslash( $_POST['ekasyna_badge'] ) ), 0, 5 ) );

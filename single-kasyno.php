@@ -66,6 +66,13 @@ while ( have_posts() ) :
 
 	<div class="ek-container ek-section ek-review-layout">
 		<article <?php post_class( 'ek-review' ); ?>>
+			<?php
+			$toc = ekasyna_toc_items( $content );
+			if ( ekasyna_show_toc( $toc ) ) {
+				get_template_part( 'template-parts/toc', null, array( 'items' => $toc, 'inline' => true ) );
+			}
+			?>
+
 			<?php get_template_part( 'template-parts/casino/info-table', null, array( 'casino' => $c ) ); ?>
 
 			<?php if ( $c['pros'] || $c['cons'] ) : ?>

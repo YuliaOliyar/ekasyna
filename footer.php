@@ -59,6 +59,9 @@ defined( 'ABSPATH' ) || exit;
 	<?php endif; ?>
 </div>
 
+<?php get_template_part( 'template-parts/popup' ); ?>
+<?php get_template_part( 'template-parts/newsletter-popup' ); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

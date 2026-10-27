@@ -17,6 +17,17 @@ function ekasyna_heading_ids( $content ) {
 	if ( ! is_singular() || ! in_the_loop() ) {
 		return $content;
 	}
+	return ekasyna_add_heading_ids( $content );
+}
+add_filter( 'the_content', 'ekasyna_heading_ids', 20 );
+
+/**
+ * Nadaje id nagłówkom H2 w dowolnym HTML (np. treść pod rankingiem, opis kategorii).
+ *
+ * @param string $content HTML.
+ * @return string
+ */
+function ekasyna_add_heading_ids( $content ) {
 	$used = array();
 	return preg_replace_callback(
 		'#<h2([^>]*)>(.*?)</h2>#is',
@@ -37,7 +48,6 @@ function ekasyna_heading_ids( $content ) {
 		$content
 	);
 }
-add_filter( 'the_content', 'ekasyna_heading_ids', 20 );
 
 /**
  * Lista H2 z gotowej (przefiltrowanej) treści.
@@ -68,4 +78,38 @@ function ekasyna_toc_items( $html ) {
 function ekasyna_show_toc( $items, $post_id = 0 ) {
 	$post_id = $post_id ? $post_id : get_the_ID();
 	return count( $items ) >= 2 && 'off' !== get_post_meta( $post_id, '_ek_toc', true );
+}
+
+/**
+ * Blok artykułu: spis treści (pasek boczny) + treść + opcjonalnie blok autora.
+ * Używany pod rankingiem i w kategoriach kasyn.
+ *
+ * @param string       $html   Gotowy HTML treści.
+ * @param WP_Post|null $source Wpis/strona, z której pochodzi treść (dla bloku autora).
+ */
+function ekasyna_article_block( $html, $source = null ) {
+	if ( '' === trim( wp_strip_all_tags( $html ) ) ) {
+		return;
+	}
+	$html    = ekasyna_add_heading_ids( $html );
+	$toc     = ekasyna_toc_items( $html );
+	$has_toc = count( $toc ) >= 2;
+	?>
+	<div class="ek-container ek-section ek-article-layout<?php echo $has_toc ? '' : ' no-toc'; ?>">
+		<?php if ( $has_toc ) : ?>
+			<aside class="ek-article-layout__side"><?php get_template_part( 'template-parts/toc', null, array( 'items' => $toc ) ); ?></aside>
+		<?php endif; ?>
+		<article class="ek-article">
+			<div class="ek-prose"><?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<?php
+			if ( $source instanceof WP_Post ) {
+				$GLOBALS['post'] = $source; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				setup_postdata( $source );
+				get_template_part( 'template-parts/author-box' );
+				wp_reset_postdata();
+			}
+			?>
+		</article>
+	</div>
+	<?php
 }

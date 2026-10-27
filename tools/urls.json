@@ -1,151 +1,156 @@
 [
     [
-        "\/",
+        "/",
         "Strona główna (ranking + artykuł)",
         "Główne"
     ],
     [
-        "\/ranking-kasyn\/",
-        "Pełny ranking kasyn",
+        "/ranking-kasyn/",
+        "Pełny ranking kasyn (z tekstem)",
         "Ranking"
     ],
     [
-        "\/wszystkie-kasyna-online\/",
+        "/wszystkie-kasyna-online/",
         "Wszystkie kasyna online (A–Z)",
         "Ranking"
     ],
     [
-        "\/kasyna\/bez-depozytu\/",
+        "/kasyna/bez-depozytu/",
         "Kategoria: Bonus bez depozytu",
         "Kategorie"
     ],
     [
-        "\/kasyna\/darmowe-spiny\/",
+        "/kasyna/darmowe-spiny/",
         "Kategoria: Darmowe spiny",
         "Kategorie"
     ],
     [
-        "\/kasyna\/blik\/",
+        "/kasyna/blik/",
         "Kategoria: Kasyno z BLIK",
         "Kategorie"
     ],
     [
-        "\/kasyna\/krypto\/",
+        "/kasyna/krypto/",
         "Kategoria: Krypto kasyno",
         "Kategorie"
     ],
     [
-        "\/kasyna\/min-depozyt\/",
+        "/kasyna/min-depozyt/",
         "Kategoria: Minimalny depozyt",
         "Kategorie"
     ],
     [
-        "\/kasyna\/nowe\/",
+        "/kasyna/nowe/",
         "Kategoria: Nowe kasyna",
         "Kategorie"
     ],
     [
-        "\/recenzje\/22bet\/",
+        "/recenzje/22bet/",
         "Recenzja: 22Bet",
         "Recenzje"
     ],
     [
-        "\/recenzje\/bdmbet-casino\/",
+        "/recenzje/bdmbet-casino/",
         "Recenzja: BDMBet Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/betflare-casino\/",
+        "/recenzje/betflare-casino/",
         "Recenzja: Betflare Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/bison-casino\/",
+        "/recenzje/bison-casino/",
         "Recenzja: Bison Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/bizzo-casino\/",
+        "/recenzje/bizzo-casino/",
         "Recenzja: Bizzo Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/fireball-casino\/",
+        "/recenzje/fireball-casino/",
         "Recenzja: Fireball Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/ggbet-casino\/",
+        "/recenzje/ggbet-casino/",
         "Recenzja: GGBet Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/hitnspin-casino\/",
+        "/recenzje/hitnspin-casino/",
         "Recenzja: Hitnspin Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/lemon-casino\/",
+        "/recenzje/lemon-casino/",
         "Recenzja: Lemon Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/lunubet\/",
+        "/recenzje/lunubet/",
         "Recenzja: Lunubet",
         "Recenzje"
     ],
     [
-        "\/recenzje\/malina-casino\/",
+        "/recenzje/malina-casino/",
         "Recenzja: Malina Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/slotuna-casino\/",
+        "/recenzje/slotuna-casino/",
         "Recenzja: Slotuna Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/spin-city-casino\/",
+        "/recenzje/spin-city-casino/",
         "Recenzja: Spin City Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/vavada-casino\/",
+        "/recenzje/vavada-casino/",
         "Recenzja: Vavada Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/verde-casino\/",
+        "/recenzje/verde-casino/",
         "Recenzja: Verde Casino",
         "Recenzje"
     ],
     [
-        "\/recenzje\/wild-chance\/",
+        "/recenzje/wild-chance/",
         "Recenzja: Wild Chance",
         "Recenzje"
     ],
     [
-        "\/jak-wyplacic-wygrana-z-kasyna\/",
-        "Artykuł: Jak wypłacić wygraną z kasyna",
+        "/jak-wyplacic-wygrana-z-kasyna/",
+        "Poradnik: Jak wypłacić wygraną z kasyna",
         "Artykuły"
     ],
     [
-        "\/hello-world\/",
-        "Artykuł: Hello world!",
-        "Artykuły"
-    ],
-    [
-        "\/author\/admin\/",
+        "/author/admin/",
         "Archiwum autora",
         "Artykuły"
     ],
     [
-        "\/category\/uncategorized\/",
+        "/category/uncategorized/",
         "Kategoria wpisów: Uncategorized",
         "Artykuły"
     ],
     [
-        "\/blad-404\/",
+        "/?popup=1",
+        "Pop-up bonusu (otwiera się od razu; normalnie po 8 s)",
+        "Inne"
+    ],
+    [
+        "/?newsletter=1",
+        "Pop-up newslettera (normalnie po 25 s lub przy wyjściu z strony)",
+        "Inne"
+    ],
+    [
+        "/blad-404/",
         "Strona 404",
         "Inne"
     ]

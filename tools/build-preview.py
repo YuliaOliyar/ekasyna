@@ -62,6 +62,8 @@ def main():
     esc_site = site.replace('/', '\\/')
 
     for path, _name, _group in pages:
+        if '?' in path:  # wariant strony (np. ?popup=1) — tylko wiersz w liście
+            continue
         raw = fetch(site.rstrip('/') + path)
         segs = [s for s in path.strip('/').split('/') if s]
         prefix = '../' * len(segs) if segs else './'
@@ -82,6 +84,8 @@ def main():
         h = h.replace(site.rstrip('/'), prefix.rstrip('/') or '.')
         # Adresy od korzenia („/ranking-kasyn/”) → relatywne.
         h = re.sub(r'(href|src|action)="/(?!/)([^"]*)"', lambda m: '%s="%s%s"' % (m.group(1), prefix, m.group(2)), h)
+        # Formularz newslettera nie wysyła danych w podglądzie.
+        h = re.sub(r'action="[^"]*wp-admin/admin-post\.php"', 'action="#demo"', h)
         # Katalogi → index.html (działa też po otwarciu z dysku).
         h = re.sub(r'href="((?:\./|(?:\.\./)+)[^"#:]*?/)(#[^"]*)?"',
                    lambda m: 'href="%sindex.html%s"' % (m.group(1), m.group(2) or ''), h)
@@ -109,7 +113,8 @@ def main():
         if group != last:
             rows.append('<tr class="grp"><th colspan="2" scope="rowgroup">%s</th></tr>' % html.escape(group))
             last = group
-        href = 'demo' + (path if path.endswith('/') else path + '/') + 'index.html'
+        base_path, _, query = path.partition('?')
+        href = 'demo' + (base_path if base_path.endswith('/') else base_path + '/') + 'index.html' + ('?' + query if query else '')
         rows.append('<tr><td><a href="%s">%s</a></td><td>%s</td></tr>' % (html.escape(href), html.escape('demo' + path), html.escape(name)))
     chip = open(os.path.join(os.path.dirname(__file__), '..', 'assets', 'img', 'logo-mark.svg'), encoding='utf-8').read()
     chip = chip.replace('<svg ', '<svg aria-hidden="true" ', 1).replace('width="96" height="96"', 'width="42" height="42"')
