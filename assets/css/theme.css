@@ -222,7 +222,7 @@ button { font: inherit; }
 .ek-casino-logo--xs { width: 42px; height: 42px; border-radius: 10px; font-size: 14px; }
 .ek-casino-logo--md { width: 64px; height: 64px; }
 .ek-casino-logo--lg { width: 100%; max-width: 180px; height: 88px; font-size: 28px; box-shadow: 0 8px 18px -10px rgba(21, 23, 28, .5); }
-.ek-casino-logo--xl { width: 112px; height: 112px; border-radius: 24px; font-size: 38px; }
+.ek-casino-logo--xl { width: 220px; height: 120px; border-radius: 24px; font-size: 40px; box-shadow: 0 10px 24px -14px rgba(21, 23, 28, .5); }
 
 /* ---------- Ranking ---------- */
 .ek-ranking { padding-block: 24px 64px; display: flex; flex-direction: column; gap: 20px; }
@@ -331,8 +331,8 @@ button { font: inherit; }
 .ek-article__cover { margin: 0; }
 .ek-article__cover img { border-radius: var(--ek-radius); }
 
-.ek-toc { background: #fff; border: 1px solid var(--ek-line); border-radius: var(--ek-radius); padding: 22px; }
-.ek-toc__title { display: block; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ek-muted); padding-bottom: 8px; }
+.ek-toc { background: #fff; border: 1px solid var(--ek-line); border-radius: var(--ek-radius); }
+.ek-toc__title { font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ek-muted); }
 .ek-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .ek-toc a { display: block; padding: 10px 12px; border-radius: 8px; font-size: 15px; text-decoration: none; }
 .ek-toc a:hover { background: var(--ek-bg); }
@@ -527,15 +527,20 @@ button { font: inherit; }
 	.ek-floating { left: 0; right: 0; bottom: 0; gap: 10px; }
 	.ek-totop { margin-right: 16px; }
 	.ek-stickybar {
-		display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
-		background: #fff; border-top: 1px solid var(--ek-line); box-shadow: 0 -10px 30px -20px rgba(21, 23, 28, .4);
+		display: flex; flex-direction: column; gap: 8px; width: 100%;
+		padding: 10px 16px calc(12px + env(safe-area-inset-bottom));
+		background: #fff; border-top: 1px solid var(--ek-line); box-shadow: 0 -12px 30px -18px rgba(21, 23, 28, .45);
 		transform: translateY(110%); transition: transform .25s;
 	}
 	.is-scrolled .ek-stickybar { transform: none; }
-	.ek-stickybar__text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+	.ek-stickybar__info { display: flex; align-items: center; gap: 10px; min-width: 0; }
+	.ek-stickybar__info .ek-casino-logo--xs { width: 36px; height: 36px; border-radius: 9px; font-size: 12px; }
+	.ek-stickybar__text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; line-height: 1.25; }
 	.ek-stickybar__text strong { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-	.ek-stickybar__text span { font-size: 11px; color: var(--ek-muted); }
-	body { padding-bottom: 72px; }
+	.ek-stickybar__text span { font-size: 11px; color: var(--ek-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+	.ek-stickybar__cta { min-height: 52px; padding-left: 22px; font-size: 17px; text-transform: uppercase; letter-spacing: .04em; box-shadow: none; }
+	.ek-stickybar__cta .ek-pill__icon { width: 40px; height: 40px; }
+	body { padding-bottom: 130px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -624,8 +629,7 @@ button { font: inherit; }
 .ek-code.is-copied .ek-code__action { color: var(--ek-green-dark); }
 @media (max-width: 720px) {
 	.ek-bonuses-wrap { padding-top: 32px; }
-	.ek-bonuses__grid { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--ek-gutter) * -1); padding: 2px var(--ek-gutter) 8px; scrollbar-width: none; }
-	.ek-bcard { flex: 0 0 82%; min-width: 0; scroll-snap-align: start; }
+	.ek-bonuses__grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* ---------- Informacje o kasynie (tabela 2 kolumny) ---------- */
@@ -761,3 +765,29 @@ body.ek-popup-open { overflow: hidden; }
 	.ek-nl__input, .ek-nl__submit { height: 52px; }
 	.ek-nl__consent { font-size: 12px; }
 }
+
+/* Recenzja na telefonie: większe logo, kompaktowa ocena obok, tytuł pod spodem */
+@media (max-width: 720px) {
+	.ek-review-hero__row { gap: 14px; align-items: stretch; }
+	.ek-review-hero__row > .ek-casino-logo--xl { order: 1; flex: 1 1 0; width: auto; min-width: 0; height: 112px; font-size: 38px; }
+	.ek-review-hero__row > .ek-scorebox { order: 2; flex: 0 0 auto; min-width: 0; justify-content: center; align-items: center; gap: 4px; padding: 12px 16px; text-align: center; }
+	.ek-scorebox > span:first-child { font-size: 11px; }
+	.ek-scorebox strong { font-size: 32px; }
+	.ek-scorebox small { font-size: 13px; margin-left: 2px; }
+	.ek-scorebox .ek-meter { width: 72px; height: 6px; }
+	.ek-review-hero__row > .ek-review-hero__title { order: 3; flex-basis: 100%; }
+	.ek-review .ek-toc--inline a { padding: 8px 10px; font-size: 15px; }
+}
+
+/* Spis treści — zwijany */
+.ek-toc { padding: 0; }
+.ek-toc__details > summary {
+	list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+	min-height: 52px; padding: 14px 22px; margin: 0; border-radius: var(--ek-radius);
+}
+.ek-toc__details > summary::-webkit-details-marker { display: none; }
+.ek-toc__details > summary:hover { background: var(--ek-surface-2); }
+.ek-toc__count { font-weight: 600; color: var(--ek-faint); letter-spacing: 0; }
+.ek-toc__chev { flex: none; color: var(--ek-red); transition: transform .2s; }
+.ek-toc__details[open] > summary .ek-toc__chev { transform: rotate(180deg); }
+.ek-toc__details > ol { padding: 0 22px 18px; }

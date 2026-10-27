@@ -199,7 +199,7 @@ function ekasyna_customize( $wp_customize ) {
 	$wp_customize->add_control( 'ekasyna_ranking_limit', array( 'label' => __( 'Liczba kasyn w rankingu na stronie głównej', 'ekasyna' ), 'section' => 'ekasyna_ranking', 'type' => 'number', 'input_attrs' => array( 'min' => 3, 'max' => 50 ) ) );
 
 	$wp_customize->add_setting( 'ekasyna_sticky_bar', array( 'default' => 1, 'sanitize_callback' => 'absint' ) );
-	$wp_customize->add_control( 'ekasyna_sticky_bar', array( 'label' => __( 'Przyklejony pasek bonusu na telefonie', 'ekasyna' ), 'section' => 'ekasyna_ranking', 'type' => 'checkbox' ) );
+	$wp_customize->add_control( 'ekasyna_sticky_bar', array( 'label' => __( 'Dolny baner „Odbierz bonus” na telefonie (w recenzji — kasyno z recenzji, na innych stronach — wybór redakcji)', 'ekasyna' ), 'section' => 'ekasyna_ranking', 'type' => 'checkbox' ) );
 }
 add_action( 'customize_register', 'ekasyna_customize' );
 

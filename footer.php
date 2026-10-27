@@ -45,16 +45,25 @@ defined( 'ABSPATH' ) || exit;
 <div class="ek-floating" data-ek-floating>
 	<a class="ek-totop" href="#" data-ek-totop aria-label="<?php esc_attr_e( 'Przewiń do góry', 'ekasyna' ); ?>"><?php echo ekasyna_icon( 'up', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a>
 	<?php
-	$pick = ekasyna_mod( 'ekasyna_sticky_bar' ) ? ekasyna_pick() : null;
-	if ( $pick && ! is_singular( 'kasyno' ) ) :
+	$pick = null;
+	if ( ekasyna_mod( 'ekasyna_sticky_bar' ) ) {
+		$pick = is_singular( 'kasyno' ) ? ekasyna_casino( get_queried_object_id() ) : ekasyna_pick();
+	}
+	if ( $pick ) :
+		$bonus_line = trim( $pick['bonus_pre'] . ' ' . $pick['bonus_amt'] . ' ' . $pick['bonus_post'] );
 		?>
-		<div class="ek-stickybar">
-			<?php echo ekasyna_casino_logo( $pick, 'ek-casino-logo ek-casino-logo--xs' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			<div class="ek-stickybar__text">
-				<strong><?php echo esc_html( trim( $pick['bonus_pre'] . ' ' . $pick['bonus_amt'] ) ); ?></strong>
-				<span><?php echo esc_html( $pick['name'] ); ?> · 18+</span>
+		<div class="ek-stickybar" role="complementary" aria-label="<?php esc_attr_e( 'Bonus', 'ekasyna' ); ?>">
+			<div class="ek-stickybar__info">
+				<?php echo ekasyna_casino_logo( $pick, 'ek-casino-logo ek-casino-logo--xs' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<div class="ek-stickybar__text">
+					<strong><?php echo esc_html( $bonus_line ? $bonus_line : $pick['bonus_type'] ); ?></strong>
+					<span><?php echo esc_html( $pick['name'] ); ?> · <?php echo esc_html( $pick['bonus_type'] ); ?> · 18+</span>
+				</div>
 			</div>
-			<a class="ek-btn ek-btn--red ek-btn--sm" <?php echo ekasyna_play_attrs( $pick ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php esc_html_e( 'Odbierz', 'ekasyna' ); ?></a>
+			<a class="ek-pill ek-stickybar__cta" <?php echo ekasyna_play_attrs( $pick ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+				<span><?php esc_html_e( 'Odbierz bonus', 'ekasyna' ); ?></span>
+				<span class="ek-pill__icon"><?php echo ekasyna_icon( 'arrow', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+			</a>
 		</div>
 	<?php endif; ?>
 </div>

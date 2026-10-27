@@ -40,7 +40,7 @@
 	// Stan „przewinięto” — pokazuje „do góry” i pasek bonusu.
 	var ticking = false;
 	function onScroll() {
-		document.body.classList.toggle( 'is-scrolled', window.scrollY > 600 );
+		document.body.classList.toggle( 'is-scrolled', window.scrollY > 300 );
 		ticking = false;
 	}
 	window.addEventListener( 'scroll', function () {
@@ -56,6 +56,13 @@
 		toTop.addEventListener( 'click', function ( e ) {
 			e.preventDefault();
 			window.scrollTo( { top: 0, behavior: 'smooth' } );
+		} );
+	}
+
+	// Boczny spis treści na szerokim ekranie — otwarty; w treści i na telefonie — zwinięty.
+	if ( window.matchMedia( '(min-width: 961px)' ).matches ) {
+		document.querySelectorAll( '.ek-toc--side details' ).forEach( function ( d ) {
+			d.open = true;
 		} );
 	}
 

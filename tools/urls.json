@@ -1,157 +1,179 @@
 [
     [
         "/",
-        "Strona główna (ranking + artykuł)",
-        "Główne"
+        "Strona główna — hero, ranking TOP, kategorie, kryteria, artykuł, FAQ, autor",
+        "Strony"
     ],
     [
         "/ranking-kasyn/",
-        "Pełny ranking kasyn (z tekstem)",
-        "Ranking"
-    ],
-    [
-        "/wszystkie-kasyna-online/",
-        "Wszystkie kasyna online (A–Z)",
-        "Ranking"
-    ],
-    [
-        "/kasyna/bez-depozytu/",
-        "Kategoria: Bonus bez depozytu",
-        "Kategorie"
+        "Pełny ranking kasyn — lista + tekst pod listą",
+        "Strony"
     ],
     [
         "/kasyna/darmowe-spiny/",
-        "Kategoria: Darmowe spiny",
-        "Kategorie"
-    ],
-    [
-        "/kasyna/blik/",
-        "Kategoria: Kasyno z BLIK",
-        "Kategorie"
-    ],
-    [
-        "/kasyna/krypto/",
-        "Kategoria: Krypto kasyno",
-        "Kategorie"
-    ],
-    [
-        "/kasyna/min-depozyt/",
-        "Kategoria: Minimalny depozyt",
-        "Kategorie"
-    ],
-    [
-        "/kasyna/nowe/",
-        "Kategoria: Nowe kasyna",
-        "Kategorie"
-    ],
-    [
-        "/recenzje/22bet/",
-        "Recenzja: 22Bet",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/bdmbet-casino/",
-        "Recenzja: BDMBet Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/betflare-casino/",
-        "Recenzja: Betflare Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/bison-casino/",
-        "Recenzja: Bison Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/bizzo-casino/",
-        "Recenzja: Bizzo Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/fireball-casino/",
-        "Recenzja: Fireball Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/ggbet-casino/",
-        "Recenzja: GGBet Casino",
-        "Recenzje"
+        "Strona bonusów (kategoria) — Darmowe spiny",
+        "Strony"
     ],
     [
         "/recenzje/hitnspin-casino/",
-        "Recenzja: Hitnspin Casino",
-        "Recenzje"
+        "Recenzja kasyna — wszystkie bonusy, informacje, plusy/minusy, tekst, autor",
+        "Strony"
     ],
     [
-        "/recenzje/lemon-casino/",
-        "Recenzja: Lemon Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/lunubet/",
-        "Recenzja: Lunubet",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/malina-casino/",
-        "Recenzja: Malina Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/slotuna-casino/",
-        "Recenzja: Slotuna Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/spin-city-casino/",
-        "Recenzja: Spin City Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/vavada-casino/",
-        "Recenzja: Vavada Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/verde-casino/",
-        "Recenzja: Verde Casino",
-        "Recenzje"
-    ],
-    [
-        "/recenzje/wild-chance/",
-        "Recenzja: Wild Chance",
-        "Recenzje"
+        "/wszystkie-kasyna-online/",
+        "Wszystkie kasyna online — katalog A–Z",
+        "Strony"
     ],
     [
         "/jak-wyplacic-wygrana-z-kasyna/",
-        "Poradnik: Jak wypłacić wygraną z kasyna",
-        "Artykuły"
-    ],
-    [
-        "/author/admin/",
-        "Archiwum autora",
-        "Artykuły"
-    ],
-    [
-        "/category/uncategorized/",
-        "Kategoria wpisów: Uncategorized",
-        "Artykuły"
-    ],
-    [
-        "/?popup=1",
-        "Pop-up bonusu (otwiera się od razu; normalnie po 8 s)",
-        "Inne"
-    ],
-    [
-        "/?newsletter=1",
-        "Pop-up newslettera (normalnie po 25 s lub przy wyjściu z strony)",
-        "Inne"
+        "Artykuł / poradnik",
+        "Strony"
     ],
     [
         "/blad-404/",
         "Strona 404",
-        "Inne"
+        "Strony"
+    ],
+    [
+        "/?popup=1",
+        "Pop-up bonusu — okno na komputerze, panel od dołu na telefonie",
+        "Pop-upy"
+    ],
+    [
+        "/?newsletter=1",
+        "Pop-up newslettera — zapis z zgodą RODO i 18+",
+        "Pop-upy"
+    ],
+    [
+        "/kasyna/bez-depozytu/",
+        "Kategoria: Bonus bez depozytu",
+        "Kategorie",
+        "hidden"
+    ],
+    [
+        "/kasyna/blik/",
+        "Kategoria: Kasyno z BLIK",
+        "Kategorie",
+        "hidden"
+    ],
+    [
+        "/kasyna/krypto/",
+        "Kategoria: Krypto kasyno",
+        "Kategorie",
+        "hidden"
+    ],
+    [
+        "/kasyna/min-depozyt/",
+        "Kategoria: Minimalny depozyt",
+        "Kategorie",
+        "hidden"
+    ],
+    [
+        "/kasyna/nowe/",
+        "Kategoria: Nowe kasyna",
+        "Kategorie",
+        "hidden"
+    ],
+    [
+        "/recenzje/22bet/",
+        "Recenzja: 22Bet",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/bdmbet-casino/",
+        "Recenzja: BDMBet Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/betflare-casino/",
+        "Recenzja: Betflare Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/bison-casino/",
+        "Recenzja: Bison Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/bizzo-casino/",
+        "Recenzja: Bizzo Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/fireball-casino/",
+        "Recenzja: Fireball Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/ggbet-casino/",
+        "Recenzja: GGBet Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/lemon-casino/",
+        "Recenzja: Lemon Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/lunubet/",
+        "Recenzja: Lunubet",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/malina-casino/",
+        "Recenzja: Malina Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/slotuna-casino/",
+        "Recenzja: Slotuna Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/spin-city-casino/",
+        "Recenzja: Spin City Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/vavada-casino/",
+        "Recenzja: Vavada Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/verde-casino/",
+        "Recenzja: Verde Casino",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/recenzje/wild-chance/",
+        "Recenzja: Wild Chance",
+        "Recenzje",
+        "hidden"
+    ],
+    [
+        "/author/admin/",
+        "Archiwum autora",
+        "Artykuły",
+        "hidden"
+    ],
+    [
+        "/category/uncategorized/",
+        "Kategoria wpisów: Uncategorized",
+        "Artykuły",
+        "hidden"
     ]
 ]

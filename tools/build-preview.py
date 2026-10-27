@@ -9,7 +9,7 @@ kopiuje użyte pliki CSS/JS/SVG i tworzy docs/index.html z listą szablonów.
 Użycie:
     python3 tools/build-preview.py --site http://localhost:8099 --wp /ścieżka/do/wordpress --urls urls.json
 
-urls.json: lista [ścieżka, nazwa, grupa], np. ["/recenzje/lemon-casino/", "Recenzja: Lemon Casino", "Recenzje"].
+urls.json: lista [ścieżka, nazwa, grupa(, "hidden")] — „hidden” = strona generowana (działają linki), ale bez wiersza w liście, np. ["/recenzje/lemon-casino/", "Recenzja: Lemon Casino", "Recenzje"].
 """
 import argparse
 import datetime
@@ -61,7 +61,8 @@ def main():
     assets = set()
     esc_site = site.replace('/', '\\/')
 
-    for path, _name, _group in pages:
+    for entry in pages:
+        path = entry[0]
         if '?' in path:  # wariant strony (np. ?popup=1) — tylko wiersz w liście
             continue
         raw = fetch(site.rstrip('/') + path)
@@ -109,7 +110,8 @@ def main():
     # Lista szablonów.
     theme_css = 'demo/wp-content/themes/ekasyna/assets/css/theme.css'
     rows, last = [], None
-    for path, name, group in pages:
+    listed = [e for e in pages if not (len(e) > 3 and e[3] == 'hidden')]
+    for path, name, group, *_ in listed:
         if group != last:
             rows.append('<tr class="grp"><th colspan="2" scope="rowgroup">%s</th></tr>' % html.escape(group))
             last = group
@@ -119,7 +121,7 @@ def main():
     chip = open(os.path.join(os.path.dirname(__file__), '..', 'assets', 'img', 'logo-mark.svg'), encoding='utf-8').read()
     chip = chip.replace('<svg ', '<svg aria-hidden="true" ', 1).replace('width="96" height="96"', 'width="42" height="42"')
     today = datetime.date.today().strftime('%d.%m.%Y')
-    index = INDEX_TPL.format(css=theme_css, chip=chip, rows='\n'.join(rows), count=len(pages), date=today)
+    index = INDEX_TPL.format(css=theme_css, chip=chip, rows='\n'.join(rows), count=len(listed), date=today)
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(index)
     open(os.path.join(out, '.nojekyll'), 'w').close()
     print('pages:', len(pages), 'assets:', len(assets), '→', out)
@@ -157,7 +159,7 @@ INDEX_TPL = '''<!doctype html>
 <section class="ek-band ek-band--top"><div class="ek-container ek-page-hero">
 <nav class="ek-breadcrumbs" aria-label="Okruszki"><span aria-current="page">1. Szablony</span></nav>
 <h1 class="ek-h1 ek-h1--page">Szablony motywu e-kasyna</h1>
-<p class="ek-lead">Lista {count} stron wygenerowanych z motywu WordPress na danych demo. Kliknij adres, aby otworzyć podgląd szablonu.</p>
+<p class="ek-lead">Po jednej przykładowej stronie dla każdego szablonu motywu ({count}) — wygenerowane z WordPressa na danych demo. Kliknij adres, aby otworzyć podgląd.</p>
 </div></section>
 <div class="ek-container ek-section"><div class="ek-tplwrap">
 <table class="ek-tpl">

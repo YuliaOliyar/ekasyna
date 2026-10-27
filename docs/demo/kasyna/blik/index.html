@@ -194,13 +194,18 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 	</div>
 
 	<div class="ek-container ek-section ek-article-layout">
-					<aside class="ek-article-layout__side"><nav class="ek-toc" aria-label="Spis treści" data-ek-toc>
-	<span class="ek-toc__title">Spis treści</span>
-	<ol>
-					<li><a href="#wplaty-blik-w-kasynie-online">Wpłaty BLIK w kasynie online</a></li>
-					<li><a href="#jak-wplacic-przez-blik">Jak wpłacić przez BLIK</a></li>
-					<li><a href="#faq">FAQ</a></li>
-			</ol>
+					<aside class="ek-article-layout__side"><nav class="ek-toc ek-toc--side" aria-label="Spis treści" data-ek-toc>
+	<details class="ek-toc__details">
+		<summary class="ek-toc__title">
+			<span>Spis treści <span class="ek-toc__count">(3)</span></span>
+			<svg class="ek-toc__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+		</summary>
+		<ol>
+							<li><a href="#wplaty-blik-w-kasynie-online">Wpłaty BLIK w kasynie online</a></li>
+							<li><a href="#jak-wplacic-przez-blik">Jak wpłacić przez BLIK</a></li>
+							<li><a href="#faq">FAQ</a></li>
+					</ol>
+	</details>
 </nav>
 </aside>
 				<article class="ek-article">
@@ -257,12 +262,17 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <div class="ek-floating" data-ek-floating>
 	<a class="ek-totop" href="#" data-ek-totop aria-label="Przewiń do góry"><svg class="ek-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
-			<div class="ek-stickybar">
-			<span class="ek-casino-logo ek-casino-logo--xs" style="--brand:#B8940F" role="img" aria-label="Logo Lemon Casino">LE</span>			<div class="ek-stickybar__text">
-				<strong>400% bonus 250 zł</strong>
-				<span>Lemon Casino · 18+</span>
+			<div class="ek-stickybar" role="complementary" aria-label="Bonus">
+			<div class="ek-stickybar__info">
+				<span class="ek-casino-logo ek-casino-logo--xs" style="--brand:#B8940F" role="img" aria-label="Logo Lemon Casino">LE</span>				<div class="ek-stickybar__text">
+					<strong>400% bonus 250 zł za wpłatę 50 zł</strong>
+					<span>Lemon Casino · Bonus powitalny · 18+</span>
+				</div>
 			</div>
-			<a class="ek-btn ek-btn--red ek-btn--sm" href="../../recenzje/lemon-casino/index.html">Odbierz</a>
+			<a class="ek-pill ek-stickybar__cta" href="../../recenzje/lemon-casino/index.html">
+				<span>Odbierz bonus</span>
+				<span class="ek-pill__icon"><svg class="ek-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+			</a>
 		</div>
 	</div>
 
